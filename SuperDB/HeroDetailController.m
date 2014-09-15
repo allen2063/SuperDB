@@ -7,9 +7,14 @@
 //
 
 #import "HeroDetailController.h"
-
+#import "SuperDBEditCell.h"
 @interface HeroDetailController ()
 @property (strong,nonatomic)NSArray *sections;
+@property (strong,nonatomic)UIBarButtonItem * saveButton;
+@property (strong,nonatomic)UIBarButtonItem * backButton;
+@property (strong,nonatomic)UIBarButtonItem * cancelBUtton;
+- (void)cancel;
+- (void)save;
 @end
 
 @implementation HeroDetailController
@@ -32,6 +37,11 @@
     NSDictionary * plist = [NSDictionary dictionaryWithContentsOfURL:plistURL];
     self.sections = [plist valueForKey:@"sections"];
     
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.saveButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save)];
+    
+    self.backButton = self.navigationItem.leftBarButtonItem ;
+    self.cancelBUtton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -64,10 +74,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString * CellIdentifier =@"HeroDetailCell";
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString * CellIdentifier =@"SuperDBEditCell";
+    SuperDBEditCell * cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
+        cell = [[SuperDBEditCell alloc]initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:CellIdentifier];
     //configure th cell...
         NSUInteger sectionIndex = [indexPath section];
         NSUInteger rowIndex = [indexPath row];
@@ -81,10 +91,29 @@
     if (self.hero != NULL) {
         //[self.hero valueForKey:[row objectForKey:@"key"]];
     }
-        //cell.detailTextLabel.text = [[self.hero valueForKey:[row objectForKey:@"key"]]description];   hero内容问题  
-        cell.detailTextLabel.text = [[row objectForKey:@"key"]description];
+        cell.detailTextLabel.text = [[self.hero valueForKey:[row objectForKey:@"key"]]description];  // hero内容问题
+        //cell.detailTextLabel.text = [[row objectForKey:@"key"]description];
     return cell;
 }
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleNone;
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated{
+    [super setEditing:editing animated:animated];
+    self.navigationItem.rightBarButtonItem = (editing) ? self.saveButton : self.editButtonItem;
+    self.navigationItem.leftBarButtonItem = (editing) ? self.cancelBUtton : self.backButton;
+}
+
+- (void)save{
+    [self setEditing:NO animated:YES];
+}
+
+- (void)cancel{
+    [self setEditing:NO animated:YES];
+}
+
 
 
 /*

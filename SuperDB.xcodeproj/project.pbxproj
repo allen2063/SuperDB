@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5624AD8F19C7296F00D5AC12 /* SuperDBEditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5624AD8E19C7296F00D5AC12 /* SuperDBEditCell.m */; };
 		56403E7B1925ACAC005F5931 /* HeroDetailConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56403E7A1925ACAC005F5931 /* HeroDetailConfiguration.plist */; };
 		56573991192519B900D3969D /* HeroDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56573990192519B900D3969D /* HeroDetailController.m */; };
 		56D199AA1902C69F0075F310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56D199A91902C69F0075F310 /* Foundation.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5624AD8D19C7296F00D5AC12 /* SuperDBEditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperDBEditCell.h; sourceTree = "<group>"; };
+		5624AD8E19C7296F00D5AC12 /* SuperDBEditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperDBEditCell.m; sourceTree = "<group>"; };
 		56403E7A1925ACAC005F5931 /* HeroDetailConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HeroDetailConfiguration.plist; sourceTree = "<group>"; };
 		5657398F192519B900D3969D /* HeroDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDetailController.h; sourceTree = "<group>"; };
 		56573990192519B900D3969D /* HeroDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroDetailController.m; sourceTree = "<group>"; };
@@ -130,6 +133,8 @@
 		56D199B11902C69F0075F310 /* SuperDB */ = {
 			isa = PBXGroup;
 			children = (
+				5624AD8D19C7296F00D5AC12 /* SuperDBEditCell.h */,
+				5624AD8E19C7296F00D5AC12 /* SuperDBEditCell.m */,
 				5657398F192519B900D3969D /* HeroDetailController.h */,
 				56573990192519B900D3969D /* HeroDetailController.m */,
 				56D199E41902C91F0075F310 /* HeroListController.h */,
@@ -277,6 +282,7 @@
 				56D199BF1902C69F0075F310 /* SuperDB.xcdatamodeld in Sources */,
 				56D199E61902C91F0075F310 /* HeroListController.m in Sources */,
 				56D199BC1902C69F0075F310 /* AppDelegate.m in Sources */,
+				5624AD8F19C7296F00D5AC12 /* SuperDBEditCell.m in Sources */,
 				56573991192519B900D3969D /* HeroDetailController.m in Sources */,
 				56D199B81902C69F0075F310 /* main.m in Sources */,
 			);
