@@ -1,5 +1,5 @@
 //
-//  SuperDBEditCellTableViewCell.h
+//  SuperDBEditCell.h
 //  SuperDB
 //
 //  Created by ZengYifei on 14-9-15.
@@ -11,4 +11,7 @@
 @interface SuperDBEditCell : UITableViewCell
 @property (strong,nonatomic) UILabel * label;
 @property (strong,nonatomic) UITextField * textField;
+
+@property (strong,nonatomic) NSString * key;
+@property (strong,nonatomic) id value;
 @end

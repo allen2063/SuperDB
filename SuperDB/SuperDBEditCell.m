@@ -1,5 +1,5 @@
 //
-//  SuperDBEditCellTableViewCell.m
+//  SuperDBEditCell.m
 //  SuperDB
 //
 //  Created by ZengYifei on 14-9-15.
@@ -14,7 +14,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        // Initialization code                            
         self.selectionStyle = UITableViewCellEditingStyleNone;
         
         self.label = [[UILabel alloc]initWithFrame:CGRectMake(12, 15, 67, 15)];
@@ -53,4 +53,13 @@
     self.textField.enabled = editing;
 }
 
+#pragma mark - Property Overrides
+
+- (id)value{
+    return self.textField.text;
+}
+
+- (void)setValue:(id)aValue{
+    self.textField.text = aValue;
+}
 @end

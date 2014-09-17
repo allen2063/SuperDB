@@ -85,7 +85,8 @@
         NSDictionary * section = [self.sections objectAtIndex:sectionIndex];
         NSArray * rows = [section objectForKey:@"rows"];
         NSDictionary * row = [rows objectAtIndex:rowIndex];
-        cell.textLabel.text = [row objectForKey:@"label"];
+        cell.key = [row objectForKey:@"key"];
+        //cell.textLabel.text = [row objectForKey:@"label"];
     
     //NSLog(@"%@",[self.hero valueForKey:[row objectForKey:@"key"]]);
     if (self.hero != NULL) {
@@ -108,6 +109,15 @@
 
 - (void)save{
     [self setEditing:NO animated:YES];
+    for(SuperDBEditCell * cell in [self.tableView visibleCells]){
+        [self.hero setValue:[cell value] forKey:[cell key]];
+    }
+    
+    NSError * error;
+    if (![ self.hero.managedObjectContext save:&error]) {
+        NSLog(@"Error saving : %@",[error localizedDescription]);
+    }
+    [self.tableView reloadData];
 }
 
 - (void)cancel{
