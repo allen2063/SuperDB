@@ -22,7 +22,7 @@
         self.label.font = [UIFont boldSystemFontOfSize:[UIFont smallSystemFontSize]];
         self.label.textAlignment = NSTextAlignmentRight;
         self.label.textColor = kLabelTextColor;
-        self.label.text = @"label";
+        //self.label.text = @"label";
         [self.contentView addSubview:self.label];
         
         self.textField = [[UITextField alloc]initWithFrame:CGRectMake(93, 13, 67, 15)];
@@ -30,7 +30,7 @@
         self.textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         self.textField.enabled = NO;
         self.textField.font = [UIFont boldSystemFontOfSize:[UIFont systemFontSize]];
-        self.textField.text = @"Title";
+        //self.textField.text = @"Title";
         [self.contentView addSubview:self.textField];
     }
     return self;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13A603" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Hero" syncable="YES">
-        <attribute name="birthdate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="birthdate" optional="YES" attributeType="Date" defaultDateTimeInterval="-24875929604" defaultValueString="1212" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="Untitled Hero" indexed="YES" syncable="YES"/>
         <attribute name="secretIdentity" attributeType="String" defaultValueString="Unknow" indexed="YES" syncable="YES"/>
-        <attribute name="sex" optional="YES" attributeType="String" regularExpressionString="/bMale/b|/bFemale/b" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" defaultValueString="Male" regularExpressionString="/bMale/b|/bFemale/b" syncable="YES"/>
     </entity>
     <elements>
         <element name="Hero" positionX="-369" positionY="-900" width="128" height="105"/>

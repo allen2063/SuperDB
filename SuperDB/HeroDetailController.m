@@ -86,14 +86,8 @@
         NSArray * rows = [section objectForKey:@"rows"];
         NSDictionary * row = [rows objectAtIndex:rowIndex];
         cell.key = [row objectForKey:@"key"];
-        //cell.textLabel.text = [row objectForKey:@"label"];
-    
-    //NSLog(@"%@",[self.hero valueForKey:[row objectForKey:@"key"]]);
-    if (self.hero != NULL) {
-        //[self.hero valueForKey:[row objectForKey:@"key"]];
-    }
-        cell.detailTextLabel.text = [[self.hero valueForKey:[row objectForKey:@"key"]]description];  // hero内容问题
-        //cell.detailTextLabel.text = [[row objectForKey:@"key"]description];
+        cell.textLabel.text = [row objectForKey:@"label"];
+        cell.detailTextLabel.text = [[self.hero valueForKey:[row objectForKey:@"key"]]description];
     return cell;
 }
 

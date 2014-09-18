@@ -26,9 +26,9 @@
 				</dict>
 				<dict>
 					<key>key</key>
-					<string>birthday</string>
+					<string>birthdate</string>
 					<key>label</key>
-					<string>Birthday</string>
+					<string>Birthdate</string>
 				</dict>
 				<dict>
 					<key>key</key>
